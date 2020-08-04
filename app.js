@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/post');
+const categoryRouter = require('./routes/category');
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/post', postsRouter);
+app.use('/category', categoryRouter);
 
 module.exports = app;
